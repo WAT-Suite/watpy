@@ -454,6 +454,99 @@ This project follows [Conventional Commits](https://www.conventionalcommits.org/
 - [mypy](https://mypy.readthedocs.io/) is used for type checking
 - All code must pass linting and type checking
 
+## Releasing
+
+This project uses GitHub Releases to trigger PyPI publishing. The workflow automatically publishes to PyPI when a final (non-pre-release) GitHub Release is created.
+
+### Release Workflow
+
+#### 1. Update Version
+
+Update the version in `pyproject.toml`:
+
+```toml
+[project]
+version = "0.2.0"  # Update to your new version
+```
+
+Follow [Semantic Versioning](https://semver.org/):
+- **MAJOR** (1.0.0): Breaking changes
+- **MINOR** (0.1.0): New features, backwards compatible
+- **PATCH** (0.0.1): Bug fixes, backwards compatible
+
+#### 2. Update Changelog
+
+Update `CHANGELOG.md` with the changes for this version.
+
+#### 3. Commit and Push Changes
+
+```bash
+git add pyproject.toml CHANGELOG.md
+git commit -m "chore: bump version to 0.2.0"
+git push origin main
+```
+
+#### 4. Create a Git Tag
+
+Create a tag matching the version (with or without 'v' prefix):
+
+```bash
+# Option 1: Tag with 'v' prefix
+git tag v0.2.0
+
+# Option 2: Tag without prefix
+git tag 0.2.0
+
+# Push the tag
+git push origin v0.2.0
+```
+
+**Important:** The tag version must match the version in `pyproject.toml` exactly (excluding the 'v' prefix if used).
+
+#### 5. Create GitHub Release
+
+Go to the [GitHub Releases page](https://github.com/wat-suite/uruwat/releases) and click "Draft a new release":
+
+**For Pre-Release (Testing):**
+- **Tag:** Select the tag you just created (e.g., `v0.2.0`)
+- **Release title:** `v0.2.0` (or your version)
+- **Description:** Copy from `CHANGELOG.md` or write release notes
+- **☑️ Set as a pre-release:** Check this box
+- Click **"Publish release"**
+
+Pre-releases are **not** published to PyPI. Use them for testing before the final release.
+
+**For Final Release (Publishing to PyPI):**
+- **Tag:** Select the tag you just created (e.g., `v0.2.0`)
+- **Release title:** `v0.2.0` (or your version)
+- **Description:** Copy from `CHANGELOG.md` or write release notes
+- **☐ Set as a pre-release:** Leave this unchecked
+- Click **"Publish release"**
+
+The GitHub Actions workflow will:
+1. Verify the tag version matches `pyproject.toml`
+2. Build the package
+3. Check the package with `twine`
+4. Publish to PyPI (only for final releases, not pre-releases)
+
+### Workflow Summary
+
+```
+1. Update version in pyproject.toml
+2. Update CHANGELOG.md
+3. Commit and push changes
+4. Create and push git tag
+5. Create GitHub Release (pre-release or final)
+   └─> Pre-release: Testing only, not published to PyPI
+   └─> Final release: Automatically published to PyPI
+```
+
+### Troubleshooting
+
+- **Version mismatch error:** Ensure the tag version (without 'v' prefix) exactly matches `pyproject.toml` version
+- **Pre-release published:** Pre-releases are intentionally skipped. Create a final release to publish to PyPI
+- **Workflow not triggered:** Ensure the release is "Published" (not "Draft") and the tag exists
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
