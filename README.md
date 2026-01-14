@@ -1,6 +1,21 @@
 # watpy
 
-Python client wrapper for the War Track Dashboard API.
+[![PyPI version](https://img.shields.io/pypi/v/watpy.svg)](https://pypi.org/project/watpy/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/watpy.svg)](https://pypi.org/project/watpy/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/your-org/wat-suite/workflows/CI/badge.svg)](https://github.com/your-org/wat-suite/actions)
+[![codecov](https://codecov.io/gh/your-org/wat-suite/branch/main/graph/badge.svg)](https://codecov.io/gh/your-org/wat-suite)
+
+Python client wrapper for the War Track Dashboard API. This library provides a type-safe, async-compatible interface for interacting with the War Track Dashboard API, making it easy to query equipment and system data.
+
+## Features
+
+- ✅ **Type-safe**: Full type hints with Pydantic models
+- ✅ **Async-compatible**: Built on httpx for async support
+- ✅ **Error handling**: Custom exception classes for different error scenarios
+- ✅ **Context manager**: Proper resource cleanup with context manager support
+- ✅ **Well-tested**: Comprehensive test suite with high coverage
+- ✅ **Modern Python**: Requires Python 3.10+
 
 ## Installation
 
@@ -12,6 +27,12 @@ Or using `uv`:
 
 ```bash
 uv add watpy
+```
+
+Or using `poetry`:
+
+```bash
+poetry add watpy
 ```
 
 ## Quick Start
@@ -394,18 +415,56 @@ uv run pytest
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+### Development Workflow
+
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
 3. Make your changes
 4. Add tests for new functionality
-5. Ensure all tests pass and code is formatted
-6. Commit your changes (following the commit message guidelines)
+5. Ensure all tests pass and code is formatted (`uv run black . && uv run ruff check . && uv run pytest`)
+6. Commit your changes (following [Conventional Commits](https://www.conventionalcommits.org/))
 7. Push to the branch (`git push origin feature/amazing-feature`)
 8. Open a Pull Request
 
+### Commit Message Guidelines
+
+This project follows [Conventional Commits](https://www.conventionalcommits.org/). Commit messages should be formatted as:
+
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**Types:**
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style changes (formatting, etc.)
+- `refactor`: Code refactoring
+- `test`: Adding or updating tests
+- `chore`: Maintenance tasks
+
+### Code Style
+
+- This project uses [Black](https://black.readthedocs.io/) for code formatting
+- [Ruff](https://github.com/astral-sh/ruff) is used for linting
+- [mypy](https://mypy.readthedocs.io/) is used for type checking
+- All code must pass linting and type checking
+
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+If you encounter any issues or have questions, please [open an issue](https://github.com/your-org/wat-suite/issues) on GitHub.
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes and version history.
 
 ## Acknowledgments
 
