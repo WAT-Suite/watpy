@@ -28,7 +28,7 @@ format:
 	uv run ruff check . --fix
 
 type-check:
-	uv run mypy watpy
+	uv run mypy uruwat
 
 clean:
 	rm -rf build/

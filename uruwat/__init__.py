@@ -2,8 +2,8 @@
 Python client wrapper for the War Track Dashboard API.
 """
 
-from watpy.client import Client
-from watpy.exceptions import (
+from uruwat.client import Client
+from uruwat.exceptions import (
     WarTrackAPIError,
     WarTrackAuthenticationError,
     WarTrackForbiddenError,
@@ -11,7 +11,7 @@ from watpy.exceptions import (
     WarTrackRateLimitError,
     WarTrackServerError,
 )
-from watpy.models import (
+from uruwat.models import (
     AllEquipment,
     AllSystem,
     Country,

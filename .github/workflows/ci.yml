@@ -31,7 +31,7 @@ jobs:
           uv run ruff check .
       - name: Run mypy
         run: |
-          uv run mypy watpy
+          uv run mypy uruwat
 
   test:
     name: Test Python ${{ matrix.python-version }}
@@ -54,7 +54,7 @@ jobs:
           uv sync --dev
       - name: Run tests
         run: |
-          uv run pytest --cov=watpy --cov-report=xml --cov-report=term-missing -m "not integration"
+          uv run pytest --cov=uruwat --cov-report=xml --cov-report=term-missing -m "not integration"
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
         with:

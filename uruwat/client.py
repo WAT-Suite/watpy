@@ -7,7 +7,7 @@ from typing import Any
 
 import httpx
 
-from watpy.exceptions import (
+from uruwat.exceptions import (
     WarTrackAPIError,
     WarTrackAuthenticationError,
     WarTrackForbiddenError,
@@ -15,7 +15,7 @@ from watpy.exceptions import (
     WarTrackRateLimitError,
     WarTrackServerError,
 )
-from watpy.models import (
+from uruwat.models import (
     AllEquipment,
     AllSystem,
     Country,
@@ -32,7 +32,7 @@ class Client:
 
     Example:
         ```python
-        from watpy import Client
+        from uruwat import Client
 
         client = Client(base_url="http://localhost:8000")
         equipments = client.get_equipments(country=Country.UKRAINE)
@@ -178,7 +178,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client, Country, EquipmentType
+            from uruwat import Client, Country, EquipmentType
 
             client = Client()
             equipments = client.get_equipments(
@@ -232,7 +232,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client, Country, EquipmentType
+            from uruwat import Client, Country, EquipmentType
 
             client = Client()
             totals = client.get_total_equipments(
@@ -260,7 +260,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client
+            from uruwat import Client
 
             client = Client()
             types = client.get_equipment_types()
@@ -292,7 +292,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client, Country, Status
+            from uruwat import Client, Country, Status
 
             client = Client()
             systems = client.get_systems(
@@ -348,7 +348,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client, Country
+            from uruwat import Client, Country
 
             client = Client()
             totals = client.get_total_systems(
@@ -376,7 +376,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client
+            from uruwat import Client
 
             client = Client()
             types = client.get_system_types()
@@ -394,7 +394,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client
+            from uruwat import Client
 
             client = Client()
             result = client.import_equipments()
@@ -411,7 +411,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client
+            from uruwat import Client
 
             client = Client()
             result = client.import_all_equipments()
@@ -428,7 +428,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client
+            from uruwat import Client
 
             client = Client()
             result = client.import_systems()
@@ -445,7 +445,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client
+            from uruwat import Client
 
             client = Client()
             result = client.import_all_systems()
@@ -462,7 +462,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client
+            from uruwat import Client
 
             client = Client()
             result = client.import_all()
@@ -479,7 +479,7 @@ class Client:
 
         Example:
             ```python
-            from watpy import Client
+            from uruwat import Client
 
             client = Client()
             health = client.health_check()

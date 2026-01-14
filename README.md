@@ -1,7 +1,7 @@
-# watpy
+# uruwat
 
-[![PyPI version](https://img.shields.io/pypi/v/watpy.svg)](https://pypi.org/project/watpy/)
-[![PyPI downloads](https://img.shields.io/pypi/dm/watpy.svg)](https://pypi.org/project/watpy/)
+[![PyPI version](https://img.shields.io/pypi/v/uruwat.svg)](https://pypi.org/project/uruwat/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/uruwat.svg)](https://pypi.org/project/uruwat/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/your-org/wat-suite/workflows/CI/badge.svg)](https://github.com/your-org/wat-suite/actions)
 [![codecov](https://codecov.io/gh/your-org/wat-suite/branch/main/graph/badge.svg)](https://codecov.io/gh/your-org/wat-suite)
@@ -20,25 +20,25 @@ Python client wrapper for the War Track Dashboard API. This library provides a t
 ## Installation
 
 ```bash
-pip install watpy
+pip install uruwat
 ```
 
 Or using `uv`:
 
 ```bash
-uv add watpy
+uv add uruwat
 ```
 
 Or using `poetry`:
 
 ```bash
-poetry add watpy
+poetry add uruwat
 ```
 
 ## Quick Start
 
 ```python
-from watpy import Client, Country, EquipmentType
+from uruwat import Client, Country, EquipmentType
 
 # Initialize the client
 client = Client(base_url="http://localhost:8000")
@@ -58,7 +58,7 @@ equipments = client.get_equipments(
 totals = client.get_total_equipments(country=Country.UKRAINE)
 
 # Get system data
-from watpy import Status
+from uruwat import Status
 
 systems = client.get_systems(
     country=Country.UKRAINE,
@@ -76,7 +76,7 @@ health = client.health_check()
 The main client class for interacting with the API.
 
 ```python
-from watpy import Client
+from uruwat import Client
 
 client = Client(
     base_url="http://localhost:8000",  # Optional, defaults to http://localhost:8000
@@ -311,7 +311,7 @@ class AllSystem:
 The library provides specific exception classes for different error scenarios:
 
 ```python
-from watpy import (
+from uruwat import (
     Client,
     WarTrackAPIError,
     WarTrackAuthenticationError,
@@ -361,7 +361,7 @@ with Client() as client:
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd watpy
+cd uruwat
 
 # Install in development mode
 uv sync --dev
@@ -377,7 +377,7 @@ uv run pre-commit install
 uv run pytest
 
 # Run with coverage
-uv run pytest --cov=watpy --cov-report=html
+uv run pytest --cov=uruwat --cov-report=html
 
 # Run specific test file
 uv run pytest tests/test_client.py
@@ -396,7 +396,7 @@ uv run black .
 uv run ruff check .
 
 # Type checking
-uv run mypy watpy
+uv run mypy uruwat
 ```
 
 ### Running CI Checks Locally
@@ -407,7 +407,7 @@ You can run the same checks that CI runs locally:
 # Run all checks
 uv run black --check .
 uv run ruff check .
-uv run mypy watpy
+uv run mypy uruwat
 uv run pytest
 ```
 

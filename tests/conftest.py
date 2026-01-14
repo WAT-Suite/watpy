@@ -3,7 +3,7 @@
 import pytest
 import respx
 
-from watpy import Client
+from uruwat import Client
 
 
 @pytest.fixture

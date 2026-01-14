@@ -2,7 +2,7 @@
 
 import pytest
 
-from watpy.models import (
+from uruwat.models import (
     AllEquipment,
     AllSystem,
     Country,

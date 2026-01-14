@@ -1,1 +1,1 @@
-"""Tests for watpy package."""
+"""Tests for uruwat package."""

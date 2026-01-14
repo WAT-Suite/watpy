@@ -1,12 +1,12 @@
 [project]
-name = "watpy"
+name = "uruwat"
 version = "0.1.0"
 description = "Python client wrapper for the War Track Dashboard API"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "War Track Dashboard Team"},
+    {name = "Erwin Lejeune"},
 ]
 keywords = ["war", "tracking", "equipment", "api", "client"]
 classifiers = [
@@ -42,14 +42,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["watpy"]
+packages = ["uruwat"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 python_files = ["test_*.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
-addopts = "-v --cov=watpy --cov-report=term-missing --cov-report=xml"
+addopts = "-v --cov=uruwat --cov-report=term-missing --cov-report=xml"
 markers = [
     "unit: Unit tests",
     "integration: Integration tests",

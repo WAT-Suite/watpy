@@ -4,8 +4,8 @@ import pytest
 import respx
 from httpx import Response
 
-from watpy import Client, Country, EquipmentType, Status
-from watpy.exceptions import (
+from uruwat import Client, Country, EquipmentType, Status
+from uruwat.exceptions import (
     WarTrackAPIError,
     WarTrackAuthenticationError,
     WarTrackForbiddenError,
