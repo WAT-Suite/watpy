@@ -1,5 +1,7 @@
 """Pytest configuration and fixtures."""
 
+from unittest.mock import AsyncMock
+
 import pytest
 import respx
 
@@ -85,3 +87,15 @@ def sample_all_system_data():
             "total": 100,
         }
     ]
+
+
+@pytest.fixture
+def mock_httpx_async_client():
+    """Create a mock httpx AsyncClient for testing."""
+    mock_client = AsyncMock()
+    mock_client.get = AsyncMock()
+    mock_client.post = AsyncMock()
+    mock_client.request = AsyncMock()
+    mock_client.aclose = AsyncMock()
+    mock_client.is_closed = False
+    return mock_client

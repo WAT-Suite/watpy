@@ -2,6 +2,7 @@
 Python client wrapper for the War Track Dashboard API.
 """
 
+from uruwat.async_client import AsyncClient
 from uruwat.client import Client
 from uruwat.exceptions import (
     WarTrackAPIError,
@@ -25,6 +26,7 @@ __version__ = "0.1.0"
 
 __all__ = [
     "Client",
+    "AsyncClient",
     "WarTrackAPIError",
     "WarTrackAuthenticationError",
     "WarTrackForbiddenError",
