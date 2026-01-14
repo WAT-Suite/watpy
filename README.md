@@ -3,8 +3,8 @@
 [![PyPI version](https://img.shields.io/pypi/v/uruwat.svg)](https://pypi.org/project/uruwat/)
 [![PyPI downloads](https://img.shields.io/pypi/dm/uruwat.svg)](https://pypi.org/project/uruwat/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![CI](https://github.com/your-org/wat-suite/workflows/CI/badge.svg)](https://github.com/your-org/wat-suite/actions)
-[![codecov](https://codecov.io/gh/your-org/wat-suite/branch/main/graph/badge.svg)](https://codecov.io/gh/your-org/wat-suite)
+[![CI](https://github.com/wat-suite/uruwat/workflows/CI/badge.svg)](https://github.com/wat-suite/uruwat/actions)
+[![codecov](https://codecov.io/gh/wat-suite/uruwat/branch/main/graph/badge.svg)](https://codecov.io/gh/wat-suite/uruwat)
 
 Python client wrapper for the War Track Dashboard API. This library provides a type-safe, async-compatible interface for interacting with the War Track Dashboard API, making it easy to query equipment and system data.
 
@@ -460,7 +460,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Support
 
-If you encounter any issues or have questions, please [open an issue](https://github.com/your-org/wat-suite/issues) on GitHub.
+If you encounter any issues or have questions, please [open an issue](https://github.com/wat-suite/uruwat/issues) on GitHub.
 
 ## Changelog
 
