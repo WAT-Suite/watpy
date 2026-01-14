@@ -5,7 +5,7 @@ from unittest.mock import AsyncMock
 import pytest
 import respx
 
-from uruwat import AsyncClient, Client
+from uruwat import Client
 
 
 @pytest.fixture

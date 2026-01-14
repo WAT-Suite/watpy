@@ -4,14 +4,10 @@ from unittest.mock import AsyncMock, Mock
 
 import pytest
 
-from uruwat import AsyncClient, Country, EquipmentType, Status
+from uruwat import AsyncClient, Country
 from uruwat.exceptions import (
     WarTrackAPIError,
     WarTrackAuthenticationError,
-    WarTrackForbiddenError,
-    WarTrackNotFoundError,
-    WarTrackRateLimitError,
-    WarTrackServerError,
 )
 
 
@@ -149,9 +145,7 @@ class TestAsyncClientRequests:
         """Test error handling for request failures."""
         import httpx
 
-        mock_httpx_async_client.request = AsyncMock(
-            side_effect=httpx.RequestError("Network error")
-        )
+        mock_httpx_async_client.request = AsyncMock(side_effect=httpx.RequestError("Network error"))
 
         async with AsyncClient() as client:
             client._client = mock_httpx_async_client
